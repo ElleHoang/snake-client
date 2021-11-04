@@ -8,8 +8,13 @@ const connect = function () {
   });
 
   conn.setEncoding("utf8");
-          
+  
+  conn.on('data', (data) => {
+    console.log(data);
+  });
+
   conn.on("connect", () => { 
+    console.log("A player has joined the game.");
     conn.write('Name: VN');
   });
   return conn;
