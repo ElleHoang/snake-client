@@ -15,8 +15,20 @@ const connect = function () {
 
   conn.on("connect", () => { 
     console.log("A player has joined the game.");
-    conn.write('Name: VN');
+    conn.write("Name: VN");
   });
+
+  conn.on("connect", () => {
+    /*setInterval(() => {
+      conn.write("Move: up");
+      setInterval(() => {
+        conn.write("Move: up");
+        setInterval(() => {
+          conn.write("Move: left");
+        }, 500);
+      }, 1000);
+    }, 1500); 
+  })*/
   return conn;
 };
 
