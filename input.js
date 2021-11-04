@@ -11,6 +11,7 @@ const setupInput = function (conn) {
   // stdin.on("data", handleUserInput);
   
   const handleUserInput = function () {
+    
     stdin.on("data", (key) => {
       if (key === "\u0003") { // exit using \u0003 - maps to ctrl+c input to exit
         process.exit();
@@ -22,6 +23,8 @@ const setupInput = function (conn) {
         conn.write ("Move: down");
       } else if (key === "d") {
         conn.write ("Move: right");
+      } else if (key === "e") {
+        conn.write ("Say: " + "\u0195" + "\u0129" + "\u03e8" + "\u03e8");
       }
     });
   }
