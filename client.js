@@ -3,7 +3,7 @@ const net = require("net");
 
 const connect = function () {
   const conn = net.createConnection({
-    host: '165.227.47.243',
+    host: 'localhost',
     port: 50541,
   });
 
@@ -18,8 +18,8 @@ const connect = function () {
     conn.write("Name: VN");
   });
 
-  conn.on("connect", () => {
-    /*setInterval(() => {
+  /*conn.on("connect", () => {
+    setInterval(() => {
       conn.write("Move: up");
       setInterval(() => {
         conn.write("Move: up");
@@ -30,9 +30,9 @@ const connect = function () {
     }, 1500); 
   })*/
   return conn;
-};
+}
 
 console.log("Connecting ...");
 connect();
 
-module.exports = { connect }
+module.exports = {connect};
